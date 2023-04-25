@@ -2,6 +2,21 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    appName: 'Portfolio',
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/login',
+        destination: '/auth/login',
+      },
+      {
+        source: '/register',
+        destination: '/auth/register',
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
